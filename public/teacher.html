@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>영어 리턴볼 · 선생님 관리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="teacher.css">
+<link rel="stylesheet" href="teacher-skin.css">
+</head>
+<body>
+<!-- 로그인 -->
+<section id="login" class="login">
+  <div class="tlogo">영어 리턴볼 <small>선생님 관리</small></div>
+  <form id="login-form" class="card loginbox">
+    <label>비밀번호<input type="password" id="pw" autocomplete="current-password" placeholder="선생님 비밀번호"></label>
+    <p class="err" id="login-err"></p>
+    <button class="btn cyan wide">들어가기</button>
+    <a href="./" class="back">← 학생 화면으로</a>
+  </form>
+</section>
+
+<section id="app" class="hide">
+  <header class="top">
+    <div class="tlogo sm">영어 리턴볼 <small>선생님 관리</small></div>
+    <nav class="classes" id="classes"></nav>
+    <button class="btn ghost sm" id="b-newclass">＋ 반</button>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button data-tab="live" class="on">🎮 경기 현황</button>
+    <button data-tab="rank">🏆 랭킹</button>
+    <button data-tab="wrong">❗ 오답 함께 보기</button>
+    <button data-tab="ques">📚 문제 관리</button>
+    <button data-tab="stud">👥 학생 관리</button>
+  </nav>
+
+  <!-- 경기 현황 -->
+  <main id="tab-live" class="tab">
+    <div class="grid2">
+      <section class="card">
+        <h3>1. 복습 단원 고르기 <small>한 경기에는 한 단원만 나와요</small></h3>
+        <div class="units" id="units">
+          <button data-unit="11"><b>11단원</b><span>전통문화</span><em>What is yutnori?</em></button>
+          <button data-unit="12"><b>12단원</b><span>환경 보호</span><em>What should we do to save energy?</em></button>
+        </div>
+        <h3>2. 경기 방식 <small>바꾸면 다음 경기부터 적용돼요</small></h3>
+        <div class="modes" id="modes">
+          <button data-mode="touch"><b>A · 터치 반격</b><span>1대1 · 정답을 고르고 원이 겹칠 때 공을 터치</span></button>
+          <button data-mode="arena"><b>B · 경기장 이동</b><span>3~4명 · 움직이며 문제로 치기를 모아 공을 받아치기</span></button>
+        </div>
+        <div class="comprow" id="comprow">
+          <h3>대회 방식 <small>경기장 이동(B)에서 써요 · 다음 '경기 시작'부터 적용</small></h3>
+          <div class="seg big" id="comps"><button data-v="free">🎮 자유 경기</button><button data-v="tournament">🏆 토너먼트</button><button data-v="league">📊 리그전</button></div>
+          <label class="lg" id="lg-wrap">한 사람당<span class="sel"><select id="lg-games"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option></select></span>경기</label>
+          <p class="hint small" id="comp-hint"></p>
+        </div>
+        <h3>3. 경기 진행</h3>
+        <div class="ctrl">
+          <button class="btn cyan big" id="b-start">▶ 경기 시작 (자동 짝 배정)</button>
+          <button class="btn yellow" id="b-pause">⏸ 잠시 멈춤</button>
+          <button class="btn pink" id="b-stop">⏹ 경기 끝내기</button>
+          <button class="btn ghost sm hide" id="b-summary">📋 지난 수업 마무리 보기</button>
+        </div>
+        <p class="state" id="run-state"></p>
+      </section>
+      <section class="card join-info">
+        <h3>학생 입장 안내</h3>
+        <div class="join-row"><div id="qr" class="qr"></div>
+          <div><div class="code-label">입장 코드</div><div class="code" id="j-code">0608</div><div class="url" id="j-url"></div>
+            <button class="btn ghost sm" id="b-bigcode">크게 띄우기</button></div></div>
+      </section>
+    </div>
+
+    <section class="card hide" id="comp-card">
+      <div class="bar"><h3 id="comp-title" style="margin:0">대회 현황</h3><button class="btn ghost sm" id="b-compbig">크게 띄우기</button></div>
+      <div id="comp-body"></div>
+    </section>
+
+    <section class="card">
+      <h3>경기 설정 <small>바꾸면 다음 경기부터 적용돼요</small></h3>
+      <div class="settings" id="settings">
+        <label data-for="touch">문제당 시간<span class="sel"><select data-k="qSec"><option>6</option><option>8</option><option>10</option><option>12</option><option>15</option></select></span>초</label>
+        <label data-for="touch">공이 빨라지기<span class="sel"><select data-k="speedUp"><option value="true">켜기</option><option value="false">끄기</option></select></span></label>
+        <label data-for="touch">가장 빠를 때<span class="sel"><select data-k="minSec"><option>3</option><option>4</option><option>5</option><option>6</option></select></span>초</label>
+        <label data-for="touch">목표 점수<span class="sel"><select data-k="target"><option>3</option><option>5</option><option>7</option><option>10</option></select></span>점</label>
+        <label data-for="arena">경기장 인원<span class="sel"><select data-k="groupSize"><option value="3">3명</option><option value="4">4명</option></select></span></label>
+        <label data-for="arena">하트<span class="sel"><select data-k="hearts"><option value="1">1개</option><option value="2">2개</option><option value="3">3개</option></select></span></label>
+        <label data-for="arena">경기 시간<span class="sel"><select data-k="arenaMin"><option value="2">2분</option><option value="3">3분</option><option value="4">4분</option><option value="5">5분</option></select></span></label>
+        <label>짝 없으면 AI<span class="sel"><select data-k="aiFill"><option value="true">AI와 대결</option><option value="false">기다리기</option></select></span></label>
+        <label>AI 정답률<span class="sel"><select data-k="botAcc"><option value="50">50% (쉬움)</option><option value="70">70% (보통)</option><option value="85">85% (어려움)</option></select></span></label>
+        <label data-for="touch">터치 판정<span class="sel"><select data-k="strikeWin"><option value="easy">넉넉하게</option><option value="normal">보통</option><option value="strict">엄격하게</option></select></span></label>
+        <label>질문 읽어 주기<span class="sel"><select data-k="tts"><option value="false">끄기</option><option value="true">켜기</option></select></span></label>
+      </div>
+    </section>
+
+    <div class="grid2 wide-left">
+      <section class="card">
+        <h3>지금 경기 <small id="live-count"></small></h3>
+        <div class="matches" id="matches"></div>
+      </section>
+      <section class="card">
+        <h3>학생 <small id="stud-count"></small></h3>
+        <div class="chips" id="chips"></div>
+        <div class="legend"><i class="st-playing"></i>경기 중 <i class="st-waiting"></i>대기 <i class="st-result"></i>결과 보는 중 <i class="st-practice"></i>AI 연습 <i class="st-off"></i>나감</div>
+        <h3 class="mt">최근 경기</h3>
+        <div class="log" id="log"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 랭킹 -->
+  <main id="tab-rank" class="tab hide">
+    <section class="card">
+      <div class="bar">
+        <div class="seg" id="rk-scope"><button data-v="cls" class="on">우리 반</button><button data-v="grade">6학년 전체</button><button data-v="battle">반 대항전</button></div>
+        <div class="seg" id="rk-by"><button data-v="points" class="on">점수</button><button data-v="wins">승리</button><button data-v="acc">정답률</button><button data-v="rally">최고 랠리</button></div>
+        <button class="gbtn hide" id="b-graph" aria-pressed="false">그래프 보기</button>
+        <div class="seg hide" id="g-metric"><button data-v="avg" class="on">평균 점수</button><button data-v="acc">정답률</button></div>
+        <button class="btn ghost sm" id="b-rkbig">크게 띄우기</button>
+        <button class="btn ghost sm" id="b-rkcsv">엑셀(CSV) 저장</button>
+      </div>
+      <div id="rk-table"></div>
+    </section>
+  </main>
+
+  <!-- 오답 함께 보기 -->
+  <main id="tab-wrong" class="tab hide">
+    <section class="card">
+      <div class="bar">
+        <div class="seg" id="wr-unit"><button data-v="11" class="on">11단원</button><button data-v="12">12단원</button></div>
+        <span class="hint">경기 뒤 학생들이 헷갈린 문제 1~2개를 띄우고, 알맞은 응답과 그 이유를 말해 봐요.</span>
+      </div>
+      <div id="wr-list"></div>
+    </section>
+  </main>
+
+  <!-- 문제 관리 -->
+  <main id="tab-ques" class="tab hide">
+    <section class="card">
+      <div class="bar">
+        <div class="seg" id="q-unit"><button data-v="11" class="on">11단원</button><button data-v="12">12단원</button></div>
+        <span class="hint" id="q-count"></span>
+        <button class="btn ghost sm" id="b-qcsv">문제 내려받기(CSV)</button>
+        <label class="btn ghost sm file">CSV로 문제 올리기<input type="file" id="q-file" accept=".csv,.txt" hidden></label>
+      </div>
+      <form class="addq" id="addq">
+        <input id="aq-q" placeholder="질문 (예: What is gat?)">
+        <input id="aq-a" placeholder="정답 응답">
+        <input id="aq-w1" placeholder="오답 1"><input id="aq-w2" placeholder="오답 2">
+        <input id="aq-pic" placeholder="그림(이모지 또는 img/파일명, 선택)"><input id="aq-cap" placeholder="그림 설명(선택)">
+        <button class="btn cyan sm">＋ 문제 추가</button>
+      </form>
+      <p class="hint small">CSV 형식: 단원,질문,정답,오답1,오답2,그림,그림설명,해설 (첫 줄 제목은 있어도 돼요). 끈 문제는 경기에 나오지 않아요.</p>
+      <div id="q-list"></div>
+    </section>
+  </main>
+
+  <!-- 학생 관리 -->
+  <main id="tab-stud" class="tab hide">
+    <section class="card">
+      <div class="bar"><span class="hint">학생은 입장 코드와 이름으로 들어와요. 같은 이름으로 다시 들어오면 기록이 이어져요.</span>
+        <button class="btn ghost sm" id="b-rename">반 이름 바꾸기</button>
+        <button class="btn pink sm" id="b-reset">이 반 기록 모두 지우기</button></div>
+      <div id="s-table"></div>
+    </section>
+  </main>
+</section>
+
+<div class="bigview hide" id="big"><button class="close" id="big-close">✕</button><div id="big-body"></div></div>
+<div class="toast" id="toast"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+<script src="teacher.js"></script>
+</body>
+</html>

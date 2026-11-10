@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b1830">
+<title>영어 리턴볼</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="rotate">📱↻ 화면을 가로로 돌려 주세요</div>
+<div id="stage">
+  <!-- 첫 화면 -->
+  <section id="scr-title" class="screen court-title">
+    <div class="title-glow"></div>
+    <div class="logo big"><span>영어 리턴볼</span><i class="logo-ball"></i></div>
+    <div class="tagline"><b>›››</b> 1대1 영어 대결 <b>‹‹‹</b></div>
+    <div class="t-robot blue" data-art="robot_blue"></div>
+    <div class="t-robot red" data-art="robot_red"></div>
+    <div class="t-ball" data-art="ball"></div>
+    <div class="t-ring"></div>
+    <div class="menu3">
+      <button class="nbtn cyan imgbtn" id="b-enter" aria-label="게임 입장"><span>게임 입장</span></button>
+      <button class="nbtn blue imgbtn" id="b-howto" aria-label="게임 방법"><span>게임 방법</span></button>
+      <button class="nbtn pink imgbtn" id="b-teacher" aria-label="선생님 모드"><span>선생님 모드</span></button>
+    </div>
+  </section>
+
+  <!-- 입장 -->
+  <section id="scr-join" class="screen court-title hide">
+    <div class="logo mid"><span>영어 리턴볼</span><i class="logo-ball"></i></div>
+    <form class="panel join" id="join-form" autocomplete="off">
+      <h2>경기장 입장</h2>
+      <label>반 입장 코드<input id="j-code" inputmode="numeric" maxlength="6" placeholder="예) 0608"></label>
+      <label>이름<input id="j-name" maxlength="10" placeholder="내 이름"></label>
+      <p class="err" id="j-err"></p>
+      <div class="row"><button type="button" class="nbtn ghost small" id="j-back">뒤로</button><button class="nbtn cyan small" id="j-go">입장하기</button></div>
+    </form>
+  </section>
+
+  <!-- 대기실 -->
+  <section id="scr-lobby" class="screen court-title hide">
+    <div class="logo mid"><span>영어 리턴볼</span><i class="logo-ball"></i></div>
+    <div class="unit-badge" id="l-unit">11단원 · 전통문화</div>
+    <div class="lobby-card panel">
+      <div class="l-robot" data-art="robot_blue"></div>
+      <div class="l-info">
+        <div class="l-name" id="l-name">이름</div>
+        <div class="l-cls" id="l-cls">6학년 8반</div>
+        <div class="l-msg" id="l-msg">선생님이 경기를 시작하면 자동으로 상대가 정해져요.</div>
+        <div class="l-dots"><i></i><i></i><i></i></div>
+        <div class="l-stats" id="l-stats"></div>
+      </div>
+    </div>
+    <div class="lobby-btns">
+      <button class="nbtn blue small" id="b-practice">기다리는 동안 AI 연습</button>
+      <button class="nbtn ghost small" id="b-rank">랭킹 보기</button>
+      <button class="nbtn ghost small" id="b-howto2">게임 방법</button>
+    </div>
+    <div class="feed" id="feed"></div>
+  </section>
+
+  <!-- 경기 -->
+  <section id="scr-match" class="screen court hide">
+    <div class="court-floor"><div class="mid-ring"></div><div class="line l1"></div><div class="line l2"></div></div>
+    <div class="deco" id="deco"></div>
+    <div class="logo small"><span>영어 리턴볼</span><i class="logo-ball"></i></div>
+    <div class="unit-badge top" id="m-unit">11단원 · 전통문화</div>
+    <div class="scorebox"><b class="me" id="sc-me">0</b><i>:</i><b class="op" id="sc-op">0</b></div>
+    <div class="names"><span class="me" id="nm-me">나</span><span class="op" id="nm-op">상대</span></div>
+    <div class="target" id="m-target">먼저 5점</div>
+    <div class="rally" id="m-rally"></div>
+    <div class="practice-tag hide" id="m-prac">연습 경기 · 점수에 안 들어가요 <button id="b-quitprac">그만하기</button></div>
+
+    <div class="arrows me">›››</div><div class="arrows op">‹‹‹</div>
+    <div class="robot me" id="r-me" data-art="robot_blue"></div>
+    <div class="robot op" id="r-op" data-art="robot_red"></div>
+    <div class="bubble" id="bubble">나에게 오는 공!</div>
+    <img class="strail" id="strail" src="img/strike/ball-trail.webp" alt="">
+    <img class="ring ring-s" id="ring-s" src="img/strike/strike-ring.webp" alt="">
+    <div class="ball" id="ball"><img src="img/strike/energy-ball.webp" alt="공"></div>
+    <img class="ring ring-t" id="ring-t" src="img/strike/timing-ring.webp" alt="">
+    <div class="trail" id="trail"></div>
+    <div class="strike-guide hide" id="strike-guide"></div>
+    <div class="pop" id="pop"></div>
+
+    <div class="qpanel" id="qpanel">
+      <div class="pic hide" id="q-pic"><div class="pic-e" id="q-pic-e"></div><div class="pic-cap" id="q-pic-cap"></div></div>
+      <div class="qbody">
+        <div class="q-who" id="q-who"></div>
+        <div class="q-text" id="q-text">준비!</div>
+        <div class="gauge"><i id="gauge"></i></div>
+      </div>
+      <button class="speak" id="b-speak" title="질문 듣기">🔊</button>
+    </div>
+    <div class="answers" id="answers">
+      <button class="ans" data-i="0"></button><button class="ans" data-i="1"></button><button class="ans" data-i="2"></button>
+    </div>
+    <div class="overlay hide" id="m-over"></div>
+  </section>
+
+  <!-- B안: 경기장 이동형 -->
+  <section id="scr-arena" class="screen hide">
+    <img class="ar-court" id="ar-court" alt="">
+    <canvas id="ar-cv" width="1600" height="900"></canvas>
+    <div class="ar-vignette"></div>
+    <div class="ar-top">
+      <div class="ar-side"><div class="ar-time" id="ar-time">3:00</div><div class="ar-unit" id="ar-unit">11단원</div></div>
+      <div class="ar-pic hide" id="ar-pic"></div>
+      <div class="ar-q">
+        <div class="ar-qtext" id="ar-qtext"></div>
+        <div class="ar-choices"><button class="ar-ans" data-i="0"></button><button class="ar-ans" data-i="1"></button><button class="ar-ans" data-i="2"></button></div>
+      </div>
+      <div class="ar-lock hide" id="ar-lock"></div>
+    </div>
+    <div class="ar-rally" id="ar-rally"></div>
+    <div class="ar-prac hide" id="ar-prac">연습 경기 · 점수에 안 들어가요 <button id="ar-quit">그만하기</button></div>
+    <div class="ar-msg" id="ar-msg"></div>
+    <div class="ar-serve hide" id="ar-serve"></div>
+    <img class="ar-spec hide" id="ar-spec" src="img/arena/ui/spectating-badge.webp" alt="관전 중">
+    <div class="ar-joy" id="ar-joy" aria-label="움직이기 조이스틱"><img class="base" src="img/arena/ui/joystick-base.webp" alt=""><img class="thumb" id="ar-thumb" src="img/arena/ui/joystick-thumb.webp" alt=""></div>
+    <button class="ar-strike empty" id="ar-strike" aria-label="치기"><img id="ar-strike-img" src="img/arena/ui/strike-charge-0.webp" alt=""></button>
+    <div class="ar-players" id="ar-players"></div>
+    <div class="ar-revive hide" id="ar-revive"></div>
+    <div class="ar-fever hide" id="ar-fever">🔥 FEVER ×2</div>
+    <div class="ar-banner hide" id="ar-banner"></div>
+    <div class="ar-crown hide" id="ar-crown"></div>
+    <div class="ar-over hide" id="ar-over"></div>
+    <div class="ar-result hide" id="ar-result"></div>
+  </section>
+
+  <!-- 결과 -->
+  <section id="scr-result" class="screen court-title hide">
+    <div class="res-head" id="r-head">WIN!</div>
+    <div class="res-score" id="r-score"></div>
+    <div class="res-gain" id="r-gain"></div>
+    <div class="panel res-review"><h3>다시 보는 문제</h3><div id="r-review"></div></div>
+    <div class="res-next" id="r-next">잠시 후 새 상대와 자동으로 경기해요</div>
+  </section>
+
+  <!-- 게임 방법 -->
+  <div class="modal hide" id="howto">
+    <div class="panel howto">
+      <h2>영어 리턴볼 게임하는 방법</h2>
+      <p class="sub">영어로 답해서 반격을 준비하고, 원이 겹칠 때 공을 터치해 되받아쳐요!</p>
+      <ol>
+        <li><b>경기 입장</b>선생님이 알려 준 반 코드와 내 이름으로 들어가요. 선생님이 시작하면 상대가 자동으로 정해져요.</li>
+        <li><b>정답으로 반격 준비</b>공이 내 쪽으로 오면 영어 질문이 떠요. 시간 게이지가 다 닳기 전에 알맞은 응답을 눌러요.</li>
+        <li><b>원이 겹칠 때 공을 터치!</b>정답이면 선택지가 사라지고 공이 다가와요. 바깥 원이 줄어들어 안쪽 원에 겹칠 때 움직이는 공을 직접 눌러요.</li>
+        <li><b>점수 얻기</b>오답, 시간 초과, 너무 빠르거나 늦은 터치는 상대 1점! 먼저 목표 점수를 얻으면 이겨요. PERFECT 반격은 상대 문제 시간을 1초 줄여요.</li>
+      </ol>
+      <p class="tip">실수해도 괜찮아요. 다음 랠리에 바로 다시 참여해요. 경기가 끝나면 다른 친구와 자동으로 다시 경기해요.</p>
+      <button class="nbtn cyan small" data-close>알겠어요!</button>
+    </div>
+  </div>
+
+  <!-- 랭킹 -->
+  <div class="modal hide" id="rank">
+    <div class="panel rankp">
+      <h2>랭킹</h2>
+      <div class="tabs" id="rk-tabs"><button data-t="cls" class="on">우리 반</button><button data-t="grade">6학년 전체</button><button data-t="battle">반 대항전</button></div>
+      <div class="rk-list" id="rk-list"></div>
+      <button class="nbtn ghost small" data-close>닫기</button>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="art.js"></script>
+<script src="student.js"></script>
+<script src="arena-client.js"></script>
+</body>
+</html>

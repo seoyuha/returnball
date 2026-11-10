@@ -1,0 +1,9 @@
+{
+  "name": "english-return-ball",
+  "version": "1.0.0",
+  "description": "영어 리턴볼 — 6학년 영어 11·12단원 1대1 대결 (교사 관리 포함)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "test": "node test/sim.js" },
+  "dependencies": { "express": "^4.21.2", "socket.io": "^4.8.1" },
+  "engines": { "node": ">=18" }
+}

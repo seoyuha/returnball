@@ -1,0 +1,195 @@
+/* 영어 리턴볼 선생님 모드 그래픽 (returnball_teacher_ui_assets) — teacher.css 뒤에 불러와요 */
+.loginbox{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/shell/login-panel.png);border-image-slice:31 118 31 118 fill;border-image-width:31px 118px;border-image-repeat:stretch;background:none;box-shadow:none;padding:40px 44px 36px}
+#app .top{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/shell/dashboard-header.png);border-image-slice:30 174 30 174 fill;border-image-width:30px 174px;border-image-repeat:stretch;background:none;box-shadow:none;margin:14px 24px 8px;padding:16px 30px}
+#app .tab .card{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/shell/dashboard-card.png);border-image-slice:29 29 29 29 fill;border-image-width:29px 29px;border-image-repeat:stretch;background:none;box-shadow:none;padding:24px 28px}
+#tabs button, .seg button, .classes button{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/shell/tab-inactive.png);border-image-slice:19 56 19 56 fill;border-image-width:17.1px 50.4px;border-image-repeat:stretch;background:none;box-shadow:none;border-radius:0;color:#cfe3ff;padding:10px 20px}
+#tabs button.on, .seg button.on, .classes button.on{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/shell/tab-active.png);border-image-slice:19 56 19 56 fill;border-image-width:17.1px 50.4px;border-image-repeat:stretch;background:none;box-shadow:none;color:#fff;text-shadow:0 0 8px rgba(64,234,255,.6)}
+.btn{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/controls/secondary.png);border-image-slice:18 55 18 55 fill;border-image-width:16.2px 49.5px;border-image-repeat:stretch;background:none;box-shadow:none;border-radius:0;padding:9px 20px}
+.btn.sm{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/controls/secondary.png);border-image-slice:18 55 18 55 fill;border-image-width:14.4px 44.0px;border-image-repeat:stretch;background:none;box-shadow:none;padding:8px 16px}
+.btn.cyan{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/controls/primary.png);border-image-slice:20 77 20 77 fill;border-image-width:17.0px 65.5px;border-image-repeat:stretch;background:none;box-shadow:none;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.btn.yellow{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/controls/pause.png);border-image-slice:19 53 19 53 fill;border-image-width:16.1px 45.0px;border-image-repeat:stretch;background:none;box-shadow:none;color:#ffe7a8}
+.btn.pink{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/controls/stop.png);border-image-slice:19 53 19 53 fill;border-image-width:16.1px 45.0px;border-image-repeat:stretch;background:none;box-shadow:none;color:#ffd6e4}
+.btn:disabled, .btn.cyan:disabled, .btn.yellow:disabled, .btn.pink:disabled{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/controls/disabled.png);border-image-slice:18 55 18 55 fill;border-image-width:15.3px 46.8px;border-image-repeat:stretch;background:none;box-shadow:none;opacity:1;color:#8c9bb8;text-shadow:none}
+#pw, #settings select, .addq input, #login input{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/controls/field.png);border-image-slice:16 16 16 16 fill;border-image-width:13.6px 13.6px;border-image-repeat:stretch;background:none;box-shadow:none;border-radius:0;padding:10px 16px;background:none}
+#units button{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/live/unit-inactive.png);border-image-slice:22 22 22 22 fill;border-image-width:17.6px 17.6px;border-image-repeat:stretch;background:none;box-shadow:none;border-radius:0;padding:16px 22px}
+#units button[data-unit="11"].on{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/live/unit-11-active.png);border-image-slice:22 81 22 81 fill;border-image-width:17.6px 64.8px;border-image-repeat:stretch;background:none;box-shadow:none;}
+#units button[data-unit="12"].on{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/live/unit-12-active.png);border-image-slice:22 81 22 81 fill;border-image-width:17.6px 64.8px;border-image-repeat:stretch;background:none;box-shadow:none;}
+.code{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/live/join-code.png);border-image-slice:23 76 23 76 fill;border-image-width:23px 76px;border-image-repeat:stretch;background:none;box-shadow:none;display:inline-block;padding:4px 30px 6px;min-width:270px;text-align:center}
+.mcard{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/live/match-card.png);border-image-slice:23 23 23 23 fill;border-image-width:18.4px 18.4px;border-image-repeat:stretch;background:none;box-shadow:none;border-radius:0;padding:14px 18px}
+.rate{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/tables/wrong-rate.png);border-image-slice:16 16 16 16 fill;border-image-width:12.8px 12.8px;border-image-repeat:stretch;background:none;box-shadow:none;border-radius:0;padding:4px 12px;color:#ffd9a0}
+#big-body{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/fullscreen-panel.png);border-image-slice:43 187 43 187 fill;border-image-width:34.4px 149.6px;border-image-repeat:stretch;background:none;box-shadow:none;padding:5vh 4vw;max-width:1500px}
+.bq-unit, .bigrank h2{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/title.png);border-image-slice:28 172 28 172 fill;border-image-width:22.4px 137.6px;border-image-repeat:stretch;background:none;box-shadow:none;display:inline-block;border-radius:0;padding:.35em 1.6em;color:#fff;background:none}
+.bq-ch div{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/answer.png);border-image-slice:23 23 23 23 fill;border-image-width:20.7px 20.7px;border-image-repeat:stretch;background:none;box-shadow:none;border-radius:0}
+.bq-ch div.right{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/answer-revealed.png);border-image-slice:23 166 23 166 fill;border-image-width:20.7px 149.4px;border-image-repeat:stretch;background:none;box-shadow:none;filter:drop-shadow(0 0 14px rgba(110,240,160,.35))}
+/* 상태 아이콘 */
+.chip{border-left:0!important;padding:5px 12px 5px 32px;background:rgba(255,255,255,.07) no-repeat 9px center/16px 16px}
+.chip.st-playing{background-image:url(img/teacher/live/status-playing.png)}
+.chip.st-waiting,.chip.st-lobby{background-image:url(img/teacher/live/status-waiting.png)}
+.chip.st-result{background-image:url(img/teacher/live/status-result.png)}
+.chip.st-practice{background-image:url(img/teacher/live/status-practice.png)}
+.chip.st-off{background-image:url(img/teacher/live/status-off.png)}
+.legend i{width:18px;height:18px;border-radius:0;background:no-repeat center/18px 18px}
+.legend i.st-playing{background-image:url(img/teacher/live/status-playing.png)}
+.legend i.st-waiting{background-image:url(img/teacher/live/status-waiting.png)}
+.legend i.st-result{background-image:url(img/teacher/live/status-result.png)}
+.legend i.st-practice{background-image:url(img/teacher/live/status-practice.png)}
+.legend i.st-off{background-image:url(img/teacher/live/status-off.png)}
+/* 표: 머리글·행 배경 */
+.tab table,.bigrank table{border-collapse:separate;border-spacing:0 6px}
+.tab table tr:first-child,.bigrank table tr:first-child{background:url(img/teacher/tables/table-header.png) center/100% 100% no-repeat}
+.tab table tr:not(:first-child),.bigrank table tr:not(:first-child){background:url(img/teacher/tables/table-row.png) center/100% 100% no-repeat}
+.tab table th,.tab table td,.bigrank table th,.bigrank table td{border:0;background:none;padding:12px 10px;text-align:left}
+.tab table th:first-child,.tab table td:first-child,.bigrank table th:first-child,.bigrank table td:first-child{padding-left:22px}
+.bigrank table th,.bigrank table td{padding:1.4vh 1vw}
+.bigrank table th{color:#bcd6ff}
+.wrow:hover{filter:brightness(1.25)}.wrow:hover td{background:none}
+/* 크게 띄우기 */
+.bigview{background:radial-gradient(ellipse at top,#1a3f86,#050c22 75%)}
+.bq-ch div{padding:2.4vh 1.6vw}
+.bigrank h2{font-size:3.2vw;margin-bottom:3vh;color:#ffe08a}
+.bigcode .code{font-size:11vw;min-width:44vw;padding:1vh 3vw}
+/* 반 버튼 숫자·점 */
+.classes button i{color:#9fe8ff}
+.classes button.on i{color:#eaffff}
+.tabs{gap:4px}
+.tabs button.on{box-shadow:none}
+.top .tlogo.sm{margin-right:8px}
+.units button em{color:#d8ecff}
+.join-info .qr{border-radius:6px}
+/* 입장 코드 크게 띄우기 */
+.bigcode .bq-unit{margin-bottom:2vh}
+.bigcode .code-label{display:block;font-size:2.6vw!important;margin:1vh 0 1.5vh!important;color:#cfe8ff;background:none;border:0}
+/* 고르는 칸 ▾ 표시 */
+.sel{position:relative;display:inline-flex;align-items:center}
+.sel select{appearance:none;-webkit-appearance:none;padding-right:34px!important;cursor:pointer}
+.sel::after{content:'▾';position:absolute;right:13px;top:50%;transform:translateY(-52%);color:#7fe9ff;font-size:16px;pointer-events:none}
+
+/* ===== 보완 그래픽 (returnball_graphics_addendum) ===== */
+/* 틀린 비율 배지: 0~29 낮음 · 30~59 보통 · 60~100 높음 */
+.rate{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/badges/wrong-low.png);border-image-slice:17 35 17 35 fill;border-image-width:13.6px 28.0px;border-image-repeat:stretch;background:none;box-shadow:none;display:inline-block;min-width:76px;padding:5px 14px;text-align:center;font-weight:700;white-space:nowrap;border-radius:0}
+.rate.lv-low{border-image-source:url(img/teacher/badges/wrong-low.png);color:#b8ffd6}
+.rate.lv-medium{border-image-source:url(img/teacher/badges/wrong-medium.png);color:#ffe2a0}
+.rate.lv-high{border-image-source:url(img/teacher/badges/wrong-high.png);color:#ffc4d6}
+.norec{color:var(--sub);font-size:14px}
+/* 작은 관리 버튼 */
+.qbtn,.rmbtn,.watchbtn,.gbtn{font-size:14px;color:#fff;padding:7px 16px;white-space:nowrap;transition:filter .15s,transform .08s}
+.qbtn:hover,.rmbtn:hover,.watchbtn:hover,.gbtn:hover{filter:brightness(1.18)}
+.qbtn:active,.rmbtn:active,.watchbtn:active,.gbtn:active{transform:scale(.96)}
+.qbtn{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/buttons/question-on.png);border-image-slice:17 36 17 36 fill;border-image-width:12.8px 27.0px;border-image-repeat:stretch;background:none;box-shadow:none;min-width:74px}
+.qbtn.on{color:#c8ffe0}
+.qbtn.off{border-image-source:url(img/teacher/buttons/question-off.png);color:#aab6cc}
+.rmbtn{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/buttons/student-remove.png);border-image-slice:17 45 17 45 fill;border-image-width:12.8px 33.8px;border-image-repeat:stretch;background:none;box-shadow:none;color:#ffd6e2}
+.watchbtn{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/buttons/watch-match.png);border-image-slice:19 54 19 54 fill;border-image-width:13.3px 37.8px;border-image-repeat:stretch;background:none;box-shadow:none;color:#e9feff;font-size:13px;padding:6px 14px}
+.gbtn{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/buttons/graph-view.png);border-image-slice:19 49 19 49 fill;border-image-width:15.2px 39.2px;border-image-repeat:stretch;background:none;box-shadow:none;font-size:15px;padding:8px 20px}
+.mcard{cursor:pointer}
+.mcard:hover{filter:brightness(1.12)}
+.mfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px}
+.mfoot .meta{margin:0}
+/* 경기 크게 보기 */
+.watch{display:flex;flex-direction:column;align-items:center;gap:3vh}
+.w-board{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/match-scoreboard.png);border-image-slice:36 180 36 180 fill;border-image-width:39.6px 198.0px;border-image-repeat:stretch;background:none;box-shadow:none;width:100%;display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;padding:3vh 3vw;min-height:36vh}
+.w-p{display:flex;flex-direction:column;align-items:center;gap:.6vh;transition:transform .3s}
+.w-robot{height:17vh;object-fit:contain;filter:drop-shadow(0 0 14px rgba(64,234,255,.45))}
+.w-p.b .w-robot{transform:scaleX(-1);filter:drop-shadow(0 0 14px rgba(255,120,90,.5))}
+.w-name{font-size:2.4vw}
+.w-score{font-family:var(--en);font-weight:900;font-size:8vw;line-height:1}
+.w-p.a .w-score{color:#40eaff;text-shadow:0 0 24px rgba(64,234,255,.7)}
+.w-p.b .w-score{color:#ff8a9a;text-shadow:0 0 24px rgba(255,79,163,.6)}
+.w-p.has .w-name{color:#ffd96a}
+.w-p.win{transform:scale(1.08)}.w-p.win .w-name::before{content:'🏆 '}
+.w-mid{display:flex;flex-direction:column;align-items:center;gap:1vh}
+.w-dir{display:flex;align-items:center;gap:1vw;font-family:var(--en);font-weight:900;font-size:3.4vw;color:#ffd96a}
+.w-dir img{width:9vw;height:9vw;filter:drop-shadow(0 0 20px rgba(255,210,31,.8));animation:wspin 1.4s linear infinite}
+.w-dir.to-a img{animation-direction:reverse}
+@keyframes wspin{to{transform:rotate(360deg)}}
+.w-dir .arr{min-width:5vw;text-align:center;animation:wpulse .7s ease-in-out infinite alternate}
+@keyframes wpulse{to{opacity:.35}}
+.w-sub{font-size:1.6vw;color:#cfe8ff}
+.w-end{font-family:var(--t);font-size:4vw;color:#fff;text-shadow:0 0 20px rgba(64,234,255,.6)}
+.w-end.small{font-size:3vw}
+.w-win{font-size:2.2vw;color:#ffe08a}
+.w-foot{display:flex;gap:4vw;font-size:2vw;color:#cfe8ff}.w-foot b{font-family:var(--en);font-size:2.6vw;color:#fff;margin:0 .3vw}
+/* 수업 마무리 */
+.summary{display:flex;flex-direction:column;align-items:center;gap:3vh}
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:2vw;width:100%}
+.pod{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6vh;width:22vw;padding:2.4vh 1vw;text-align:center}
+.pod.gold{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/podium-gold.png);border-image-slice:25 81 25 81 fill;border-image-width:22.5px 72.9px;border-image-repeat:stretch;background:none;box-shadow:none;min-height:28vh;width:25vw}
+.pod.silver{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/podium-silver.png);border-image-slice:25 81 25 81 fill;border-image-width:22.5px 72.9px;border-image-repeat:stretch;background:none;box-shadow:none;min-height:22vh}
+.pod.bronze{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/podium-bronze.png);border-image-slice:25 81 25 81 fill;border-image-width:22.5px 72.9px;border-image-repeat:stretch;background:none;box-shadow:none;min-height:18vh}
+.pod-rank{font-family:var(--t);font-size:2.2vw}
+.pod.gold .pod-rank{color:#ffe08a}.pod.silver .pod-rank{color:#e4efff}.pod.bronze .pod-rank{color:#ffc9a6}
+.pod-names{font-size:2.4vw;color:#fff;line-height:1.25}
+.pod.gold .pod-names{font-size:3vw}
+.pod-pts{font-family:var(--en);font-weight:800;font-size:1.6vw;color:#cfe8ff}
+.sum-cards{display:grid;grid-template-columns:1fr 1.4fr;gap:2vw;width:100%}
+.scard{border-style:solid;border-width:0;border-color:transparent;border-image-source:url(img/teacher/projection/summary-card.png);border-image-slice:30 125 30 125 fill;border-image-width:24.0px 100.0px;border-image-repeat:stretch;background:none;box-shadow:none;padding:3vh 2.4vw;text-align:left;min-height:22vh}
+.scard h4{margin:0 0 1.2vh;font-weight:400;font-size:1.8vw;color:#40eaff}
+.scard p{margin:.6vh 0;font-size:1.5vw;color:#cfe8ff}.scard p b{color:#ffb0c4}
+.scard .none{color:#9fbfe6}
+.sc-big{font-family:var(--en);font-weight:900;font-size:5vw;color:#ffe08a;line-height:1}.sc-big small{font-family:var(--k);font-weight:400;font-size:1.8vw;margin-left:.4vw}
+.sc-q{font-family:var(--en);font-weight:800;font-size:2.3vw;color:#fff;line-height:1.2}
+.sc-a{color:#7dffb0!important;font-family:var(--en);font-weight:700}
+.sum-foot{font-size:1.5vw;color:#9fbfe6}
+.big-empty{font-size:2vw}
+/* 반 대항전 그래프 */
+.graph{padding:6px 4px}
+.g-title{color:#9fbfe6;margin-bottom:10px;font-size:15px}
+.g-row,.g-axis{display:grid;grid-template-columns:170px 1fr 90px;align-items:center;gap:14px}
+.g-row{padding:10px 0}
+.g-name{font-size:19px}.g-name small{display:block;font-size:13px;color:#9fbfe6}
+.g-track{position:relative;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border-left:2px solid #9fbfe6}
+.g-fill{height:100%;border-radius:0 8px 8px 0;background:linear-gradient(90deg,#1290c0,#40eaff);box-shadow:0 0 14px rgba(64,234,255,.45);transition:width .5s}
+.g-fill.acc{background:linear-gradient(90deg,#1f9a5c,#6ef0a0);box-shadow:0 0 14px rgba(110,240,160,.4)}
+.g-row.lead .g-name{color:#ffe08a}
+.g-none{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;color:#9fbfe6}
+.g-val{font-family:var(--en);font-weight:800;font-size:18px}
+.g-ticks{position:relative;height:22px;border-top:1px solid rgba(159,191,230,.4)}
+.g-ticks span{position:absolute;top:4px;transform:translateX(-50%);font-size:12px;color:#9fbfe6}
+.bigrank .graph{text-align:left}
+.bigrank .g-row,.bigrank .g-axis{grid-template-columns:16vw 1fr 9vw}
+.bigrank .g-name{font-size:2.2vw}.bigrank .g-name small{font-size:1.2vw}
+.bigrank .g-track{height:5vh}.bigrank .g-val{font-size:2.2vw}.bigrank .g-title{font-size:1.4vw}
+.bigrank .g-ticks span{font-size:1.1vw}
+
+/* B안: 경기 방식 선택·경기장 경기 카드 */
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.modes button{text-align:left;padding:14px 18px;display:flex;flex-direction:column;gap:4px}
+.modes button b{font-family:var(--t);font-weight:400;font-size:22px}.modes button span{color:var(--sub);font-size:14px}
+#modes button{background:none;border-style:solid;border-width:0;border-image-source:url(img/teacher/live/unit-inactive.png);border-image-slice:20 54 20 54 fill;border-image-width:16px 43px;color:#fff}
+#modes button.on{border-image-source:url(img/teacher/live/unit-12-active.png)}
+#modes button[data-mode="touch"].on{border-image-source:url(img/teacher/live/unit-11-active.png)}
+.mcard.arena .ap-list{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px}
+.ap{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:3px 8px;border-left:4px solid var(--c);background:rgba(255,255,255,.04);border-radius:6px;font-size:14px}
+.ap.out{opacity:.45}
+.ap-n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hrt{width:16px;height:15px;vertical-align:middle;margin-left:1px}
+.w-board.arena{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6vw;padding:3vh 2.4vw}
+.wa{position:relative;display:flex;flex-direction:column;align-items:center;gap:.6vh;padding:2vh 1vw;border-radius:18px;background:rgba(255,255,255,.05);border:3px solid var(--c)}
+.wa img{height:15vh;object-fit:contain}
+.wa .hrt{width:2.2vw;height:2vw}
+.wa-name{font-size:2vw;color:#fff}.wa-meta{font-size:1.2vw;color:#cfe8ff}
+.wa.out{opacity:.45;filter:grayscale(.6)}
+.wa.chased{box-shadow:0 0 30px rgba(255,90,110,.6);animation:wpulse .6s ease-in-out infinite alternate}
+.wa-tag{font-size:1.3vw;color:#ffd6de;background:rgba(255,60,90,.3);padding:.3vh .8vw;border-radius:999px}.wa-tag.out{background:rgba(160,180,210,.2);color:#cfe0ff}
+.wa-place{position:absolute;top:-1.6vh;left:50%;transform:translateX(-50%);font-family:var(--t);font-size:2vw;color:#ffe08a;background:#0b1a3c;padding:0 .8vw;border-radius:10px}
+
+/* 대회 방식 · 대진표 · 승점표 */
+.comprow{margin:-6px 0 16px}
+.comprow h3{margin-bottom:8px}
+.seg.big button{font-size:16px;padding:9px 18px}
+.comprow .lg{display:inline-flex;align-items:center;gap:8px;margin-left:14px;color:var(--sub)}
+.ap-tag{font-size:12px;color:#ffe08a;margin-bottom:6px}
+.ap.rev{border-left-style:dashed;animation:wpulse .6s ease-in-out infinite alternate}
+.ap small{font-size:12px;color:#ffd6de}
+.wa-tag.rev{background:rgba(125,255,176,.2);color:#b8ffd6}
+.champ{font-family:var(--t);font-size:26px;color:#ffe08a;margin-bottom:12px}.champ b{font-weight:400;color:#fff;margin-left:8px}
+.tr-wrap{display:flex;gap:16px;overflow-x:auto;padding-bottom:6px}
+.tr-round{min-width:220px;display:flex;flex-direction:column;gap:10px}
+.tr-round h4{margin:0;font-weight:400;color:var(--cyan);font-size:18px}
+.tr-g{display:flex;flex-direction:column;gap:4px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.05);border-left:4px solid var(--cyan)}
+.tr-g.live{border-left-color:#ffd21f;box-shadow:0 0 12px rgba(255,210,31,.2)}
+.tr-g span{font-size:16px}.tr-g span.adv{color:#7dffb0}.tr-g span.adv::after{content:' ✅'}.tr-g span.out{color:#7d8fb0;text-decoration:line-through}
+.tr-g small{color:var(--sub);font-size:12px}
+.comp-big{text-align:left}.comp-big h2{text-align:center}.comp-big .tr-round{min-width:16vw}.comp-big .tr-g span{font-size:1.6vw}.comp-big .tr-round h4{font-size:1.8vw}.comp-big .champ{font-size:3vw;text-align:center}
+.crown-big{text-align:center}.cb-crown{font-size:14vw;animation:wpulse .8s ease-in-out infinite alternate}.cb-name{font-family:var(--t);font-size:8vw;color:#ffe08a;text-shadow:0 0 40px #ffd21f}.cb-sub{font-size:3vw;color:#fff}
+.sum-champ{font-family:var(--t);font-size:2.2vw;color:#ffe08a}.sum-champ b{font-weight:400;color:#fff;margin:0 .6vw}
